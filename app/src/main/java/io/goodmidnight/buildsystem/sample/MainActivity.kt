@@ -1,6 +1,7 @@
 package io.goodmidnight.buildsystem.sample
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -12,10 +13,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import io.goodmidnight.buildsystem.sample.ui.theme.BuildsystemsampleTheme
+import timber.log.Timber
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        Log.d("MainActivity", "onCreate")
+
         enableEdgeToEdge()
         setContent {
             BuildsystemsampleTheme {
@@ -32,10 +37,12 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
+    Log.w("Greeting", "warn")
+    Timber.i("Hello $name!")
     Text(
         text = "Hello $name!",
         modifier = modifier
-    )
+    ).also { Log.w("Greeting", "warn") }
 }
 
 @Preview(showBackground = true)
