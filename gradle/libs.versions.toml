@@ -31,4 +31,4 @@ timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "tim
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-buildsystem-log = { id = "id.goodmidnight.buildsystem.log" }
+buildsystem-log = { id = "io.goodmidnight.buildsystem.log" }
